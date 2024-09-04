@@ -26,15 +26,15 @@ const router = createBrowserRouter([
         element: <ProductView />,
       },
       {
-        path: "cart",
+        path: "carts",
         element: <CartView />,
       },
       {
-        path: "order",
+        path: "orders",
         element: <OrderView />,
       },
       {
-        path: "about",
+        path: "abouts",
         element: <AboutView />,
       },
     ],
