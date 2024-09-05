@@ -6,6 +6,7 @@ import CartView from "./page/CartView.jsx";
 import HomeView from "./page/HomeView.jsx";
 import OrderView from "./page/OrderView.jsx";
 import ProductView from "./page/ProductView.jsx";
+import DetailProduct from "./page/DetailProduct.jsx";
 
 import LoginView from "./page/auth/LoginView.jsx";
 import RegisterView from "./page/auth/RegisterView.jsx";
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <ProductView />,
+      },
+      {
+        path: "product/:id",
+        element: <DetailProduct />,
       },
       {
         path: "carts",
