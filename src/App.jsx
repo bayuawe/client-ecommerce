@@ -13,6 +13,7 @@ import PublicLayout from "./Layouts/PublicLayout.jsx";
 
 //loader
 import { loader as HomeLoader } from "./page/HomeView.jsx";
+import { loader as ProductLoader } from "./page/ProductView.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <ProductView />,
+        loader: ProductLoader,
       },
       {
         path: "product/:id",
