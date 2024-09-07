@@ -6,7 +6,7 @@ import Hero from "../components/Hero.jsx";
 export const loader = async ({ request }) => {
   const { data } = await customAPI.get("/product?limit=3");
 
-  const products = data.dataProduct;
+  const products = data.data;
   return { products };
 };
 
