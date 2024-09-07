@@ -1,23 +1,16 @@
 import customAPI from "../api";
-import { useState, useEffect } from "react";
 import CardProduct from "../components/CardProduct.jsx";
+import { useLoaderData } from "react-router-dom";
+
+export const loader = async ({ request }) => {
+  const { data } = await customAPI.get("/product");
+
+  const products = data.dataProduct;
+  return { products };
+};
 
 const HomeView = () => {
-  const [products, setProducts] = useState([]);
-  const getProduct = async () => {
-    try {
-      const { data } = await customAPI.get("/product?limit=3");
-      setProducts(data.dataProduct);
-      console.log(data.dataProduct);
-    } catch (error) {
-      console.error("Error mengambil produk:", error);
-    }
-  };
-
-  useEffect(() => {
-    getProduct();
-  }, []);
-
+  const { products } = useLoaderData();
   return (
     <>
       <div className="text-start pb-5">

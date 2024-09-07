@@ -7,11 +7,12 @@ import HomeView from "./page/HomeView.jsx";
 import OrderView from "./page/OrderView.jsx";
 import ProductView from "./page/ProductView.jsx";
 import DetailProduct from "./page/DetailProduct.jsx";
-
 import LoginView from "./page/auth/LoginView.jsx";
 import RegisterView from "./page/auth/RegisterView.jsx";
-
 import PublicLayout from "./Layouts/PublicLayout.jsx";
+
+//loader
+import { loader as HomeLoader } from "./page/HomeView.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomeView />,
+        loader: HomeLoader,
       },
       {
         path: "products",
