@@ -15,6 +15,9 @@ import PublicLayout from "./Layouts/PublicLayout.jsx";
 import { loader as HomeLoader } from "./page/HomeView.jsx";
 import { loader as ProductLoader } from "./page/ProductView.jsx";
 
+//action
+import { action as LoginAction } from "./page/auth/LoginView.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +54,7 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginView />,
+    action: LoginAction,
   },
   {
     path: "register",
