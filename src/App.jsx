@@ -18,6 +18,9 @@ import { loader as ProductLoader } from "./page/ProductView.jsx";
 //action
 import { action as LoginAction } from "./page/auth/LoginView.jsx";
 
+//store
+import { store } from "./store.js";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,7 +57,7 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <LoginView />,
-    action: LoginAction,
+    action: LoginAction(store),
   },
   {
     path: "register",

@@ -1,19 +1,22 @@
-import React from "react";
 import FormAuth from "../../components/FormAuth";
 import customAPI from "../../api";
+import { toast } from "react-toastify";
+import { redirect } from "react-router-dom";
+import { loginUser } from "../../features/userSlice";
 
-export const action = async ({ request }) => {
+export const action = (store) => async ({ request }) => {
   const formInputData = await request.formData();
   const data = Object.fromEntries(formInputData);
 
   try {
     const response = await customAPI.post("/auth/login", data);
-    console.log(response);
-    return null;
+    store.dispatch(loginUser(response.data));
+    toast.success("Login Berhasil");
+    return redirect("/");
   } catch (error) {
-    const errorMessage = error?.response?.data?.message;
-    console.log(errorMessage);
-    return { errorMessage };
+    const errorMessage = error?.response?.data?.message || "Terjadi kesalahan";
+    toast.error(errorMessage); // Tambahkan ini untuk debugging
+    return { error: errorMessage }; // Kembalikan objek dengan properti error
   }
 };
 
