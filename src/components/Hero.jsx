@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import { useLoaderData, Link } from "react-router-dom";
 
 const Hero = () => {

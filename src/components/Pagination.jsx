@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 
 const Pagination = () => {

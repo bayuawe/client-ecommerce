@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import customAPI from "../api";
 import { useLoaderData } from "react-router-dom";
 import Filter from "../components/Filter";

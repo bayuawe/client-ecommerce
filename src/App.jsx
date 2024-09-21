@@ -15,8 +15,9 @@ import PublicLayout from "./Layouts/PublicLayout.jsx";
 import { loader as HomeLoader } from "./page/HomeView.jsx";
 import { loader as ProductLoader } from "./page/ProductView.jsx";
 
-//action
+  //action
 import { action as LoginAction } from "./page/auth/LoginView.jsx";
+import { action as RegisterAction } from "./page/auth/RegisterView.jsx";
 
 //store
 import { store } from "./store.js";
@@ -62,6 +63,7 @@ const router = createBrowserRouter([
   {
     path: "register",
     element: <RegisterView />,
+    action: RegisterAction(store),
   },
 ]);
 

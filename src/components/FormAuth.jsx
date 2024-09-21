@@ -1,8 +1,13 @@
-import React from "react";
+ 
 import { Form, Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import FormInput from "./Form/FormInput";
 
 const FormAuth = ({ isRegister }) => {
+  FormAuth.propTypes = {
+    isRegister: PropTypes.bool.isRequired,
+  };
+
   return (
     <div className="h-screen grid place-items-center">
       <Form
@@ -46,9 +51,9 @@ const FormAuth = ({ isRegister }) => {
           </p>
         ) : (
           <p className="text-center">
-            Don't have an account?
+            Tidak memiliki akun?
             <Link to="/register" className="link link-hover link-primary">
-              Register
+              Daftar
             </Link>
           </p>
         )}
