@@ -1,14 +1,13 @@
  
 import { Link } from "react-router-dom";
+import { priceFormat } from "../utils";
+import PropTypes from 'prop-types';
 
 const CardProduct = ({ item }) => {
-  const priceFormat = (price) => {
-    const rupiahFormat = new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-    }).format(price);
-    return rupiahFormat;
+  CardProduct.propTypes = {
+    item: PropTypes.object.isRequired,
   };
+
   return (
     <>
       <div key={item._id} className="card bg-base-100 shadow-xl">

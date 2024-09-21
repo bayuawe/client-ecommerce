@@ -16,7 +16,7 @@ export const action = (store) => async ({ request }) => {
   } catch (error) {
     const errorMessage = error?.response?.data?.message || "Terjadi kesalahan";
     toast.error(errorMessage); // Tambahkan ini untuk debugging
-    return { error: errorMessage }; // Kembalikan objek dengan properti error
+    return null; // Kembalikan objek dengan properti error
   }
 };
 

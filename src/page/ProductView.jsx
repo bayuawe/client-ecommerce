@@ -31,7 +31,7 @@ const ProductView = () => {
         <h2 className="text-md text-primary font-bold text-right my-3">
           Total: {pagination.totalProduct} Product
         </h2>
-        <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid md:grid-cols-3 gap-3">
           {!products.length ? (
             <p className="text-sm italic">produk tidak ditemukan</p>
           ) : (
